@@ -91,7 +91,7 @@ class _EditProfileViewState
                       ),
                       onPressed: () async {
                         controller.updateProfile();
-                        Get.back();
+                        Get.back(result: true);
                       },
                     ),
                   ),

@@ -47,11 +47,13 @@ class _ProfileViewState extends ViewState<ProfileView, ProfileController> {
               actions: [
                 IconButton(
                   icon: Icon(Icons.edit_outlined, color: Colors.white,),
-                  onPressed: () {
-                    Get.toNamed(Routes.EDITPROFILE,
+                  onPressed: () async {
+                    final result = await Get.toNamed(Routes.EDITPROFILE,
                       arguments: controller.information.value,
-                      preventDuplicates: false
                     );
+                    if(result) {
+                      controller.fetchInformation();
+                    }
                   },
                 ),
               ],
