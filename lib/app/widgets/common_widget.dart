@@ -297,7 +297,7 @@ BoxDecoration boxDecoration(){
   return BoxDecoration(
       border: Border.all(
           color: Colors.blue,
-          width: 2.0
+          width: 1.5
       ),
       borderRadius: BorderRadius.all(
           Radius.circular(15)
@@ -311,6 +311,7 @@ TableRow tableRow(Widget widget1, Widget widget2){
       ]
   );
 }
+
 Widget textInformation(String text){
   return Text(
     text,
@@ -323,16 +324,13 @@ Widget textFormField({
   String labelText,
   Function change,
 }) {
-  return Container(
-    margin: EdgeInsets.all(5),
-    child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TextFormField(
-        initialValue: initialValue,
-        onChanged: change,
-        decoration:
-        InputDecoration(border: OutlineInputBorder(), labelText: labelText),
-      ),
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: TextFormField(
+      initialValue: initialValue,
+      onChanged: change,
+      decoration:
+      InputDecoration(border: OutlineInputBorder(), labelText: labelText),
     ),
   );
 }
